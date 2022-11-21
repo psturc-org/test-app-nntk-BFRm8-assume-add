@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    appstudio.openshift.io/application: test-app-nntk
+    appstudio.openshift.io/component: build-suite-test-component-image-url-kdsv
+    build.appstudio.openshift.io/build: "true"
+    build.appstudio.openshift.io/type: build
+    build.appstudio.openshift.io/version: "0.1"
+    pipelines.appstudio.openshift.io/type: build
+  creationTimestamp: null
+  name: elbuild-suite-test-component-image-url-kdsv
+  namespace: build-e2e-specific-image-url-rcxs
+spec:
+  path: /
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: el-build-suite-test-component-image-url-kdsv
+    weight: null
+status: {}
